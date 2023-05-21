@@ -61,7 +61,10 @@
             <td onclick="makeMove(4, 4)"></td>
         </tr>
     </table>
+    <p>Player 1 score: <span id="score1">0</span></p>
+    <p>Player 2 score: <span id="score2">0</span></p>
     <div class="reset-button" onclick="resetBoard()">Reset Board</div>
+    <div class="reset-button" onclick="resetScore()">Reset Score</div>
     <script>
         // 5x5 array to represent the game board
         var board = [
@@ -72,10 +75,11 @@
             ['', '', '', '', '']
         ];
 
+        var score1 =0;
+        var score2 =0;
         var currentPlayer = 'X';
         function randomFirstPlayer(){
             const num1 = Math.floor((Math.random() * 2) + 1);
-            console.log(num1);
             if(num1 == 1){
                 currentPlayer ='X';         
             }else{
@@ -84,6 +88,23 @@
             console.log(currentPlayer);
           
         }
+        function scorePlayer1() {
+            score1++;
+            console.log(score1);
+            document.getElementById('score1').textContent = score1;
+        }
+        function scorePlayer2() {
+            score2++;
+            console.log(score2);
+            document.getElementById('scor2').textContent = score2;
+        }
+
+        function resetScore() {
+      score1 = 0;
+      score2 = 0;
+      document.getElementById('score1').textContent = score1;
+      document.getElementById('score2').textContent = score2;
+    }
 
         function makeMove(row, col) {
             // Check if the cell is empty
@@ -95,6 +116,11 @@
                 // Check for a win
                 if (checkWin(currentPlayer)) {
                     alert(currentPlayer + ' wins!');
+                    if(currentPlayer ='X'){
+                        scorePlayer1();
+                    }else{
+                        scorePlayer2();
+                    }
                     resetBoard();
                 } else if (checkDraw()) {
                     alert('It\'s a draw!');
