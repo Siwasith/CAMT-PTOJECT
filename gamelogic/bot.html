@@ -20,6 +20,7 @@
             background-color: #ccc;
             cursor: pointer;
         }
+        
     </style>
 </head>
 <body>
@@ -90,7 +91,7 @@
         }
         function scorePlayer1() {
             score1++;
-            console.log(score1);
+            console.log(score2);
             document.getElementById('score1').textContent = score1;
         }
         function scorePlayer2() {
@@ -115,11 +116,12 @@
             if (checkWin(currentPlayer)) {
                 alert(currentPlayer + ' wins!');
                 console.log(currentPlayer);
-                if(currentPlayer ='X'){
-                        scorePlayer1();///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////แก้
-                    }else{
-                        scorePlayer2();
+                if(currentPlayer =='X'){
+                        scorePlayer1();
                     }
+                if(currentPlayer =='O'){
+                        scorePlayer2();
+                }
                 resetBoard();
             } else if (checkDraw()) {
                 alert('It\'s a draw!');
@@ -127,23 +129,13 @@
             } else {
                 currentPlayer = (currentPlayer === 'X') ? 'O' : 'X';
                 if (currentPlayer === 'O') {
-                    isBotTurn = true;
-                  
-                        makeBotMove();
-                    
-                    
+                    isBotTurn = true;                 
+                        makeBotMove();                  
                 }
             }
         }
     }
-    function checkBoard() {
-        
-    }
 
-    function counterMove(row ,col) {
-        console.log('counter '+row ,col);
-        makeMove(row, col);
-    }
 
         function checkWin(player) {
     // Check rows

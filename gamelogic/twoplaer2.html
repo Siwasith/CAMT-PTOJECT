@@ -96,7 +96,7 @@
         function scorePlayer2() {
             score2++;
             console.log(score2);
-            document.getElementById('scor2').textContent = score2;
+            document.getElementById('score2').textContent = score2;
         }
 
         function resetScore() {
@@ -116,9 +116,10 @@
                 // Check for a win
                 if (checkWin(currentPlayer)) {
                     alert(currentPlayer + ' wins!');
-                    if(currentPlayer ='X'){
+                    if(currentPlayer =='X'){
                         scorePlayer1();
-                    }else{
+                    }
+                    if(currentPlayer =='O'){
                         scorePlayer2();
                     }
                     resetBoard();
