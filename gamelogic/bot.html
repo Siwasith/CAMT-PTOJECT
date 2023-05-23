@@ -78,20 +78,9 @@
         var score1 =0;
         var score2 =0;
         var currentPlayer = 'X';
-        function randomFirstPlayer(){
-            const num1 = Math.floor((Math.random() * 2) + 1);
-            console.log(num1);
-            if(num1 == 1){
-                currentPlayer ='X';         
-            }else{
-                currentPlayer ='O';       
-            }
-            console.log(currentPlayer);
-          
-        }
         function scorePlayer1() {
             score1++;
-            console.log(score2);
+            console.log(score1);
             document.getElementById('score1').textContent = score1;
         }
         function scorePlayer2() {
@@ -219,6 +208,7 @@
         for (var i = 0; i < cells.length; i++) {
             cells[i].innerHTML = '';
         }
+        
     }
         
     function makeBotMove() {
