@@ -66,8 +66,13 @@
     <p>Bot score: <span id="score2">0</span></p>
     <div class="reset-button" onclick="resetBoard()">Reset Board</div>
     <div class="reset-button" onclick="resetScore()">Reset Score</div>
+    
+    <!--<div class="container">
+        <div id="todo-list-container"></div>
+      </div>
+    -->
     <script>
-var CRUD_CURD_ID = "f1b0d452462a4d248f196614b9b4b93e";
+    var CRUD_CURD_ID = "485bd7f6885342ff86d753ff0a7af9a6";
       var CRUD_CURD_RESOURCE_NAME = "history1";
       var CURD_CURD_API_ENDPOINT = "https://crudcrud.com/api/" + CRUD_CURD_ID + "/" + CRUD_CURD_RESOURCE_NAME;
       var APPLICATION_STATE = {
@@ -165,6 +170,14 @@ var CRUD_CURD_ID = "f1b0d452462a4d248f196614b9b4b93e";
     };
 
 
+
+
+
+
+
+
+    
+
         // 5x5 array to represent the game board
         var board = [
             ['', '', '', '', ''],
@@ -220,7 +233,7 @@ var CRUD_CURD_ID = "f1b0d452462a4d248f196614b9b4b93e";
                 if(currentPlayer =='O'){
                         scorePlayer2();
                 }
-                if (score1 == 3) {
+ /*               if (score1 == 3) {
               winner = "X " + score1 + "-" + score2 + " O";
               resetScore();
 
@@ -235,7 +248,7 @@ var CRUD_CURD_ID = "f1b0d452462a4d248f196614b9b4b93e";
               addNewTodoItem(winner, function () {
                 refreshTodoList();
               });
-            }
+            }*/
                 resetBoard();
             } else if (checkDraw()) {
                 alert('It\'s a draw!');
